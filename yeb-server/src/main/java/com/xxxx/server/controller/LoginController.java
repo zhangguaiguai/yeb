@@ -47,7 +47,7 @@ public class LoginController {
     }
 
     @ApiOperation(value = "登录之后返回token")
-    @PostMapping("/login")
+    @PostMapping("/logout")
     public RespBean loginOut(){
         return RespBean.success("注销成功");
     }

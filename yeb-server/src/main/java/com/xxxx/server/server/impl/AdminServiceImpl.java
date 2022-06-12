@@ -36,14 +36,14 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Resource
-    JwtTokenUtil jwtTokenUtil;
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
 
-    @Resource
-    AdminMapper adminMapper;
+    @Autowired
+    private AdminMapper adminMapper;
 
     @Value("${jwt.tokenHead}")
-    String tokenHead;
+    private String tokenHead;
 
     @Override
     public RespBean login(String username, String password, HttpServletRequest request) {
