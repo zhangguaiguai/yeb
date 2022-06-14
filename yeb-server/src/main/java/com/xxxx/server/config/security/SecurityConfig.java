@@ -45,8 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/doc.html",
                 "/webjars/**",
                 "/swagger-resources/**",
-                "/v2/api-docs/**"
-//                "/captcha",
+                "/v2/api-docs/**",
+                "/captcha"
 //                "/ws/**"
         );
 
@@ -64,8 +64,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login","/logout")
-                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
