@@ -10,5 +10,4 @@ import com.xxxx.server.pojo.Admin;
  * @date 2022/06/05
  */
 public interface AdminMapper extends BaseMapper<Admin> {
-
 }

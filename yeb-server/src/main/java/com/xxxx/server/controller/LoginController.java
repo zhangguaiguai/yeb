@@ -31,7 +31,7 @@ public class LoginController {
     @ApiOperation(value = "登录之后返回token")
     @PostMapping("/login")
     public RespBean login(@RequestBody AdminLoginParam adminLoginParam, HttpServletRequest request){
-        return adminService.login(adminLoginParam.getUsername(),adminLoginParam.getPassword(), request);
+        return adminService.login(adminLoginParam.getUsername(),adminLoginParam.getPassword(),adminLoginParam.getCode(), request);
     }
 
     @ApiOperation(value = "获取当前用户登录信息")
@@ -46,7 +46,7 @@ public class LoginController {
         return admin;
     }
 
-    @ApiOperation(value = "登录之后返回token")
+    @ApiOperation(value = "退出登录")
     @PostMapping("/logout")
     public RespBean loginOut(){
         return RespBean.success("注销成功");
