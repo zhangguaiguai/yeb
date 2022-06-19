@@ -22,4 +22,11 @@ public interface MenuMapper extends BaseMapper<Menu> {
      * @return {@link List}<{@link Menu}>
      */
     List<Menu> getMenusByAdminId(Integer id);
+
+    /**
+     * 开始菜单的作用
+     *
+     * @return {@link List}<{@link Menu}>
+     */
+    List<Menu> getMenusWithRole();
 }

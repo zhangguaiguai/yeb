@@ -18,11 +18,11 @@ import java.lang.reflect.Field;
 @MapperScan("com.xxxx.server.mapper")
 public class YebApplication {
     public static void main(String[] args) throws NoSuchFieldException {
-        ConfigurableApplicationContext context =
+//        ConfigurableApplicationContext context =
         SpringApplication.run(YebApplication.class,args);
-        System.out.println(context);
+//        System.out.println(context);
 
         //beanFactory
-        Field singletonObjects = DefaultSingletonBeanRegistry.class.getDeclaredField("singletonObjects");
+//        Field singletonObjects = DefaultSingletonBeanRegistry.class.getDeclaredField("singletonObjects");
     }
 }

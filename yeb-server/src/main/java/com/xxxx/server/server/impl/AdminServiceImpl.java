@@ -1,11 +1,12 @@
 package com.xxxx.server.server.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.xxxx.server.config.security.JwtTokenUtil;
+import com.xxxx.server.config.security.component.JwtTokenUtil;
 import com.xxxx.server.mapper.AdminMapper;
+import com.xxxx.server.mapper.RoleMapper;
 import com.xxxx.server.pojo.Admin;
-import com.xxxx.server.pojo.Menu;
 import com.xxxx.server.pojo.RespBean;
+import com.xxxx.server.pojo.Role;
 import com.xxxx.server.server.IAdminService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,17 +34,19 @@ import java.util.Map;
 @Service
 public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements IAdminService {
 
-    @Autowired
+    @Resource
     private UserDetailsService userDetailsService;
 
-    @Autowired
+    @Resource
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
+    @Resource
     private JwtTokenUtil jwtTokenUtil;
 
     @Resource
     private AdminMapper adminMapper;
+    @Resource
+    RoleMapper roleMapper;
 
     @Value("${jwt.tokenHead}")
     private String tokenHead;
@@ -78,5 +81,10 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     public Admin getAdminByUserName(String username) {
         return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username",username)
                 .eq("enabled",true));
+    }
+
+    @Override
+    public List<Role> getRoles(Integer adminId) {
+        return roleMapper.getRoles(adminId);
     }
 }
