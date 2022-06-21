@@ -1,6 +1,7 @@
 package com.xxxx.server.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.xxxx.server.pojo.Menu;
 import com.xxxx.server.pojo.MenuRole;
 import com.xxxx.server.pojo.RespBean;
 import com.xxxx.server.pojo.Role;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 
 
 /**
- * 有的控制器
+ * 权限组控制器
  *
  * @author zhangwei
  * @date 2022/06/19
@@ -60,11 +61,11 @@ public class PermissionController {
 		return RespBean.error("删除失败!");
 	}
 
-//	@ApiOperation(value = "查询所有菜单")
-//	@GetMapping("/menus")
-//	public List<Menu> getAllMenus(){
-//		return menuService.getAllMenus();
-//	}
+	@ApiOperation(value = "查询所有菜单")
+	@GetMapping("/menus")
+	public List<Menu> getAllMenus(){
+		return menuService.getAllMenus();
+	}
 
 	@ApiOperation(value = "根据角色id查询菜单id")
 	@GetMapping("/mid/{rid}")
@@ -76,9 +77,9 @@ public class PermissionController {
 				.collect(Collectors.toList());
 	}
 
-//	@ApiOperation(value = "更新角色菜单")
-//	@PutMapping("/")
-//	public RespBean updateMenuRole(Integer rid,Integer[] mids){
-//		return menuRoleService.updateMenuRole(rid,mids);
-//	}
+	@ApiOperation(value = "更新角色菜单")
+	@PutMapping("/")
+	public RespBean updateMenuRole(Integer rid,Integer[] mids){
+		return menuRoleService.updateMenuRole(rid,mids);
+	}
 }
