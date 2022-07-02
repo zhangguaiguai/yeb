@@ -44,4 +44,14 @@ public interface IAdminService extends IService<Admin> {
      * @return {@link List}<{@link Role}>
      */
     List<Role> getRoles(Integer adminId);
+
+    /**
+     * 获取所有管理员
+     *
+     * @param keywords 关键字
+     * @return {@link List}<{@link Admin}>
+     */
+    List<Admin> getAllAdmins(String keywords);
+
+    RespBean updateAdminRole(Integer adminId, Integer[] rids);
 }
