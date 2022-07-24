@@ -12,4 +12,6 @@ public interface IEmployeeService extends IService<Employee> {
 
     RespPageBean getEmployeeByPage(Integer currentPage, Integer size, Employee employee, LocalDate[] beginDateScope);
 
+    RespBean maxWorkID();
+
 }
