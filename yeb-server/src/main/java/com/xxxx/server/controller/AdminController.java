@@ -1,11 +1,9 @@
 package com.xxxx.server.controller;
 
 
-import com.xxxx.server.mapper.AdminRoleMapper;
 import com.xxxx.server.pojo.Admin;
 import com.xxxx.server.pojo.RespBean;
 import com.xxxx.server.pojo.Role;
-import com.xxxx.server.server.IAdminRoleService;
 import com.xxxx.server.server.IAdminService;
 import com.xxxx.server.server.IRoleService;
 import io.swagger.annotations.ApiOperation;

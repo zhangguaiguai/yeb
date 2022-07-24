@@ -5,7 +5,6 @@ import com.xxxx.server.pojo.Department;
 import com.xxxx.server.pojo.RespBean;
 import com.xxxx.server.server.IDepartmentService;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

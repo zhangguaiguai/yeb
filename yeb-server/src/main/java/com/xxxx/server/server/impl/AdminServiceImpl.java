@@ -12,11 +12,9 @@ import com.xxxx.server.pojo.Role;
 import com.xxxx.server.server.IAdminService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xxxx.server.utils.AdminUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -61,6 +59,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
             return RespBean.error("验证码输入错误，请重新输入！");
         }
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+        System.out.println("userDetails = " + userDetails);
         if (null==userDetails || !passwordEncoder.matches(password,userDetails.getPassword())){
             return RespBean.error("用户名密码不正确");
         }
